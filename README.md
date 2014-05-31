@@ -52,3 +52,37 @@ Video(<URL>)
 Video.play()
 Video.pause()
 ```
+
+Planned script flow:
+```
+var canvas = document.getElementById('canvas');
+var html = document.getElementById('html');
+var r = new Renderer(canvas, html);
+r.Configure({
+        text-transition: "ease",
+        text-font: "Open Sans",
+        text-frame: "frame.png",
+        text-padding: "10px",
+        choice-padding: "3px",
+        choice-frame: "cframe.png"
+    });
+
+r['k'] = r.Character("Keith", {color:"black"});
+r['y'] = r.Character("Random Person", {color:"black"});
+
+k.say("Well hello there");
+r.say("Ohai!");
+
+r.Menu(r,
+    {
+        "Destroy Earth":function(r){
+            r['k'].say("What on earth!");
+            r['k'].say("Why would you destroy earth?");
+        },
+        "Destroy the Sun":function(r){
+            r['k'].say("What on earth!");
+            r['k'].say("Why would you destroy sun?");
+        }
+    });
+
+```
